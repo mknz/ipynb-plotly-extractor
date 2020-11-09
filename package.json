@@ -1,0 +1,23 @@
+{
+  "name": "ipynb-plotly-extractor",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ipex": "src/main.js"
+  },
+  "keywords": [],
+  "author": "Masanori Kanazu",
+  "license": "MIT",
+  "dependencies": {
+    "acorn-walk": "^8.0.0",
+    "acorn": "^8.0.4",
+    "astring": "^1.4.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "description": "CLI utility to extract Plotly JSON data from IPython Notebook file"
+}
