@@ -33,7 +33,7 @@ for (let i = 0; i < cells.length; i++) {
         let figData = parsePlotly(jsStr);
 
         // Save to file
-        let fileName = savePrefix + '_fig_' + String(i).padStart(3, '0') + '.json';
+        let fileName = savePrefix + '_fig_' + String(i + 1).padStart(3, '0') + '.json';
         fs.writeFileSync(fileName, JSON.stringify(figData));
       }
     }
