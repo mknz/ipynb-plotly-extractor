@@ -11,7 +11,7 @@ sudo npm install -g
 ```
 
 ```bash
-ipex Untitled.ipynb
+ipynb-extract Untitled.ipynb
 ls Untitled*.json
 >>> Untitled_fig_001.json
 ```
