@@ -25,6 +25,10 @@ for (let i = 0; i < cells.length; i++) {
     const outputs = cell.outputs;
     for (let j = 0; j < outputs.length; j++) {
       const output = outputs[j];
+      // Skip uninterested cell outputs
+      if ((typeof output.data === 'undefined') || (output.output_type !== 'display_data')) {
+        continue;
+      }
       if ('application/vnd.plotly.v1+json' in output.data) {
         // Extract JS code from HTML
         const jsStr = extractPlotly(output.data['text/html']);
