@@ -8,13 +8,18 @@ const { generate } = require('astring');
 let source;
 let savePrefix = 'plotly';
 
-if (process.argv.length == 2) {
+if (process.argv.length === 2) {
   console.log('Usage: ipynb-ex file');
   process.exit(0);
 } else {
   // Read filepath from arg
-  source = fs.readFileSync(process.argv[2], 'utf8');
-  savePrefix = path.basename(process.argv[2], '.ipynb');
+  const filePath = process.argv[2];
+  if (path.extname(filePath) !== '.ipynb') {
+    console.log('Invalid file:', filePath);
+    process.exit(1);
+  }
+  source = fs.readFileSync(filePath, 'utf8');
+  savePrefix = path.basename(filePath, '.ipynb');
 }
 
 const cells = JSON.parse(source).cells;
