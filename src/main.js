@@ -8,10 +8,9 @@ const { generate } = require('astring');
 let source;
 let savePrefix = 'plotly';
 
-if (process.argv.length < 3) {
-  // Read js file from stdin
-  const stdinBuffer = fs.readFileSync(0); // STDIN_FILENO = 0
-  source = stdinBuffer.toString();
+if (process.argv.length == 2) {
+  console.log('Usage: ipynb-ex file');
+  process.exit(0);
 } else {
   // Read filepath from arg
   source = fs.readFileSync(process.argv[2], 'utf8');

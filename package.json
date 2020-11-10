@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "ipex": "src/main.js"
+    "ipynb-ex": "src/main.js"
   },
   "keywords": [],
   "author": "Masanori Kanazu",
