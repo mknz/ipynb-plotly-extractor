@@ -22,6 +22,7 @@ if (process.argv.length === 2) {
   savePrefix = path.basename(filePath, '.ipynb');
 }
 
+let outCount = 0;
 const cells = JSON.parse(source).cells;
 for (let i = 0; i < cells.length; i++) {
   const cell = cells[i];
@@ -43,10 +44,13 @@ for (let i = 0; i < cells.length; i++) {
         // Save to file
         const fileName = savePrefix + '_fig_' + String(i + 1).padStart(3, '0') + '.json';
         fs.writeFileSync(fileName, JSON.stringify(figData));
+        console.log('Extracted', fileName);
+        outCount += 1;
       }
     }
   }
 }
+console.log('Found', outCount, 'figures.');
 
 // Extract JavaScript code from HTML lines
 function extractPlotly (lines) {
